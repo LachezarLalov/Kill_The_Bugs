@@ -24,7 +24,7 @@ let player = {
    movingSpeed: 2.5,
 };
 let game = {
-   speed: 2,
+   speed: 5,
    movingMultiplier: 1,
    bugsMovingSpeed: 1,
    gravity: 1,
