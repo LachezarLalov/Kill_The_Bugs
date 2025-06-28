@@ -53,7 +53,7 @@ function GameStart() {
    player.width = wizard.offsetWidth;
    player.height = wizard.offsetHeight;
 
-   gameAction();
+   window.requestAnimationFrame(gameAction);
 }
 
 function gameAction(timestamp) {
