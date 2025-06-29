@@ -8,7 +8,8 @@ This is a learning project developed as part of the JavaScript module in SoftUni
 - In-game lives
 
 ## Planned Features
-- User database to store usernames and scores  
+- User database to store usernames and scores
+- Pause function
 - Add moblie support
 
 ## Would be nice
