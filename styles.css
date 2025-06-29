@@ -1,8 +1,30 @@
+.touch-fire-container {
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
+   z-index: 1000;
+}
+
+#touch-fire {
+   font-size: 24px;
+   padding: 15px 25px;
+   border-radius: 15px;
+   border: none;
+   background: rgb(255, 85, 0);
+   color: white;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   cursor: pointer;
+}
+
 body {
-   font-size: 32px;
-   font-family: consolas;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
    margin: 0;
    overflow: hidden;
+   font-family: 'Press Start 2P', cursive;
+
+   font-size: (20px, 3vw, 1.5dvi);
 }
 
 .game-section {
@@ -10,6 +32,10 @@ body {
    flex-direction: column;
 }
 .game-area {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
    position: relative;
    background: rgb(61, 160, 244);
    background: linear-gradient(
@@ -23,65 +49,203 @@ body {
    margin: 0;
 }
 
-.game-start {
-   position: absolute;
-   width: 30%;
-   background: rgb(235, 253, 153);
-   border-radius: 30px;
-   top: 40%;
-   align-self: center;
-   z-index: 2;
-   text-align: center;
-   padding: 30px;
-   cursor: pointer;
+#lets-play {
+   font-size: clamp(16px, 3vw, 2dvi);
+   animation: lets-play 3s steps(4) infinite;
+   animation-iteration-count: 1;
 }
 
-.game-over-container {
+@keyframes lets-play {
+   50% {
+      opacity: 1;
+   }
+   80% {
+      opacity: 0;
+   }
+}
+
+.main-screen {
+   width: 100dvw;
+   height: 100dvh;
    position: absolute;
-   width: 100%;
-   height: 100%;
-   background: rgba(0, 0, 0, 0.5);
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   z-index: 1;
+   background: rgb(61, 160, 244);
+   background: linear-gradient(
+      0deg,
+      rgba(61, 150, 244, 1) 0%,
+      rgba(192, 221, 246, 1) 33%,
+      rgba(55, 157, 244, 1) 100%
+   );
 }
-.game-over {
-   width: 30%;
-   background: rgba(230, 40, 2, 80%);
-   border-radius: 30px;
-   z-index: 99;
+
+.main-game-start {
+   background: rgb(20, 107, 215);
+   border-radius: clamp(20px, 3vw, 1.5dvi);
+   top: 40%;
+   align-self: center;
+   z-index: 2;
    text-align: center;
-   padding: 30px;
+   text-transform: uppercase;
+   letter-spacing: 0.1dvi;
+   font-size: clamp(16px, 3vw, 1.6dvi);
+   padding: clamp(20px, 3vw, 1.8dvi);
+   width: clamp(50px, 30vw, 240px);
+   cursor: pointer;
+   color: white;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-game-start:hover {
+   background: rgb(236, 167, 8);
+   transition: all 0.1s ease;
+}
+
+.main-game-start-clicked {
+   background: rgb(236, 167, 8);
+   animation: flicker 0.12s ease;
+   animation-iteration-count: 5;
+}
+
+@keyframes flicker {
+   0%,
+   100% {
+      background: rgb(236, 167, 8);
+   }
+
+   50% {
+      background: rgb(72, 59, 29);
+   }
+}
+
+.main-game-score {
+   border-radius: 30px;
+   align-self: center;
+   z-index: 2;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 5px;
+   font-size: clamp(8px, 2vw, 1dvi);
+   padding: clamp(20px, 3vw, 1.5dvi);
+   color: rgb(255, 255, 255);
+   text-shadow: 0 0.2dvi 10px rgba(0, 0, 0, 0.5);
+   line-height: clamp(20px, 3vw, 1.5dvi);
+}
+
+.game-over-container {
+   z-index: 100;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: rgba(0, 0, 0, 0.55);
+}
+
+.game-over {
+   align-self: center;
+   z-index: 2;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 0.5dvi;
+   font-size: clamp(10px, 3vw, 0.8dvi);
+   line-height: clamp(20px, 3vw, 1.5dvi);
+   padding: clamp(20px, 3vw, 1.8dvi);
+   width: clamp(100px, 50vw, 400px);
+   color: white;
+   margin: 1dvh;
+}
+
+.main-menu {
+   background: rgb(39, 75, 118);
+   border-radius: clamp(20px, 3vw, 1.5dvi);
+   align-self: center;
+   z-index: 2;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 0.5dvi;
+   font-size: clamp(12px, 3vw, 1dvi);
+   padding: clamp(16px, 3vw, 1.6dvi);
+   width: clamp(80px, 40vw, 260px);
+   cursor: pointer;
+   color: white;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   margin: 1dvh;
+}
+.main-menu:hover {
+   background: rgb(23, 55, 82);
+   transition: all 0.1s ease;
 }
 
 .try-again {
-   width: 10%;
-   color: white;
-   background: rgb(0, 102, 226);
-   border-radius: 30px;
-   z-index: 99;
+   background: rgb(20, 107, 215);
+   border-radius: clamp(20px, 3vw, 1.5dvi);
+   align-self: center;
+   z-index: 2;
    text-align: center;
-   padding: 10px;
-   margin: 1dvh;
+   text-transform: uppercase;
+   letter-spacing: 0.5dvi;
+   font-size: clamp(16px, 3vw, 1.2dvi);
+   padding: clamp(20px, 3vw, 1.8dvi);
+   width: clamp(100px, 40vw, 300px);
    cursor: pointer;
+   color: white;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   margin: 1dvh;
 }
 
-.game-score {
-   background: black;
-   color: white;
-   text-align: center;
-   height: 40px;
+.try-again:hover {
+   background: rgb(236, 167, 8);
+   transition: all 0.1s ease;
+}
+
+.try-again-clicked {
+   background: rgb(236, 167, 8);
+   animation: flicker 0.12s ease;
+   animation-iteration-count: 5;
 }
 
 .game-stats {
-   background: black;
-   color: white;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 100dvw;
+   height: 40px;
+   background-color: rgb(8, 29, 40);
+}
+
+.game-score {
+   color: rgb(28, 180, 48);
+   margin-right: 10dvw;
    text-align: center;
+   display: flex;
+   align-items: center;
+}
+
+.game-lives {
+   display: flex;
+   align-items: center;
+   color: rgb(255, 0, 0);
+   text-align: center;
+   height: 40px;
+   margin-left: 10dvw;
 }
 
 .hide {
    display: none;
+}
+
+.heart {
+   z-index: 2222;
+   width: 25px;
+   height: 25px;
+   background-image: url('./images/heart.png');
+   background-size: cover;
 }
 
 .wizard {
@@ -91,6 +255,22 @@ body {
    height: 100px;
    background-image: url('./images/wizard.png');
    background-size: cover;
+}
+
+.wizard-hit {
+   animation: flicker-wiz 0.12s ease;
+   animation-iteration-count: 5;
+}
+
+@keyframes flicker-wiz {
+   0%,
+   100% {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 0.2;
+   }
 }
 
 .wizard-fire {
@@ -120,8 +300,12 @@ body {
 .bugs {
    z-index: 5;
    position: absolute;
-   width: 60px;
-   height: 60px;
+   width: 50px;
+   height: 50px;
    background-image: url('./images/bug.png');
    background-size: cover;
+}
+
+.no-select {
+   user-select: none;
 }

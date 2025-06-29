@@ -3,23 +3,41 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device=width, initial-scale=1.0" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+         rel="stylesheet"
+      />
+
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="Expires" content="0" />
       <title>Wizad scroller</title>
-      <link rel="stylesheet" href="./styles.css" />
+      <link rel="stylesheet" href="./styles.css?=v2" />
    </head>
 
-   <body>
+   <body class="no-select">
       <div class="game-section">
-         <div class="game-start">Press to play!</div>
-         <div class="game-score"><span class="points">0</span> pts</div>
+         <div class="main-screen">
+            <div class="main-game-start">Play!</div>
+            <div class="main-game-score"></div>
+         </div>
+
+         <div class="game-stats hide">
+            <div class="game-lives">Lives:</div>
+            <div class="game-score"><span class="points">0</span>&nbsp;pts</div>
+         </div>
+
          <div class="game-area"></div>
          <div class="game-over-container hide">
             <div class="game-over">Game over...<br /></div>
             <div class="try-again">Try agian</div>
+            <div class="main-menu">Main menu</div>
          </div>
-
-         <!--  <div class="game-stats">3 lives</div> -->
+         <div class="touch-fire-container">
+            <button id="touch-fire" class="hide">🔥 Fire</button>
+         </div>
       </div>
 
-      <script src="./main.js"></script>
+      <script src="./main.js?=v2"></script>
    </body>
 </html>
