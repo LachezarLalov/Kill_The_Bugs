@@ -2,6 +2,8 @@
 
 This is a learning project developed as part of the JavaScript module in SoftUni.
 
+### Try it - https://lachezarlalov.github.io/Kill_The_Bugs/
+
 ## Added 
 - In-game lives
 
