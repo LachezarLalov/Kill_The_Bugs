@@ -186,14 +186,13 @@ function gameAction(timestamp) {
    // COLLIOSION
    bugs.forEach((bug) => {
       if (isCollision(wizard, bug)) {
-         if (player.lives > 1) {
-            if (player.isInvincible) {
-               return;
-            }
+         if (player.isInvincible) {
+            return;
+         }
 
+         if (player.lives > 1) {
             player.lives -= 1;
             player.isInvincible = true;
-
             let hearts = gameLives.querySelectorAll('.heart');
             if (hearts.length > 0) {
                hearts[hearts.length - 1].remove();
@@ -204,7 +203,7 @@ function gameAction(timestamp) {
             setTimeout(() => {
                wizard.classList.remove('wizard-hit');
                player.isInvincible = false;
-            }, 500);
+            }, 1000);
             bug.remove();
          } else {
             let hearts = gameLives.querySelectorAll('.heart');

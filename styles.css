@@ -259,7 +259,7 @@ body {
 
 .wizard-hit {
    animation: flicker-wiz 0.12s ease;
-   animation-iteration-count: 5;
+   animation-iteration-count: 10;
 }
 
 @keyframes flicker-wiz {
