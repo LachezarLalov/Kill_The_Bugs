@@ -2,13 +2,17 @@
 
 This is a learning project developed as part of the JavaScript module in SoftUni.
 
-## Planned Features
+### Try it - https://lachezarlalov.github.io/Kill_The_Bugs/
 
-- User database to store usernames and scores  
+## Added 
 - In-game lives
 
-## Nice to Have (Optional)
+## Planned Features
+- User database to store usernames and scores
+- Pause function
 - Add moblie support
+
+## Would be nice
 - Old-school loading screen animation  
 - Level system  
 - Sound effects and background music
